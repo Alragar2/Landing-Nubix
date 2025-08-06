@@ -11,7 +11,7 @@ const Header = () => {
                     {/* Logo */}
                     <div className="flex items-center">
                         <div className="text-3xl font-extrabold bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 bg-clip-text text-transparent hover:scale-110 transition-all duration-300 cursor-pointer">
-                            <img src="/src/assets/LogoConTexto.png" alt="Nubix Logo" className="h-10" />
+                            <img src="/LogoConTexto.png" alt="Nubix Logo" className="h-10" />
                         </div>
                     </div>
 
