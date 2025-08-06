@@ -60,18 +60,13 @@ const About = () => {
                   Nuestra Historia
                 </h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Jorge ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus 
-                  ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis 
-                  convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-                  lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.
+                  
                 </p>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                  sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                  
                 </p>
                 <p className="text-gray-600 leading-relaxed">
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque 
-                  sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+                  Ayúdanos a construirla.
                 </p>
               </div>
               <div className="mt-8 lg:mt-0">
