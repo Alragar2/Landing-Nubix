@@ -4,6 +4,7 @@ import Features from './components/Features.tsx'
 import About from './components/About.tsx'
 import Contact from './components/Contact.tsx'
 import Footer from './components/Footer.tsx'
+import FirebaseDebug from './components/FirebaseDebug.tsx'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Contact />
       <Footer />
+      <FirebaseDebug />
     </div>
   )
 }

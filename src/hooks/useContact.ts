@@ -28,6 +28,11 @@ export const useContact = (): UseContactReturn => {
     setSuccess(false)
 
     try {
+      // Verificar que Firebase esté configurado
+      if (!db) {
+        throw new Error('Firebase no está configurado correctamente')
+      }
+
       // Agregar timestamp y datos adicionales
       const contactData = {
         ...data,
@@ -36,15 +41,29 @@ export const useContact = (): UseContactReturn => {
         source: 'landing-page'
       }
 
+      console.log('📤 Enviando contacto a Firestore...')
+      
       // Guardar en Firestore
       const docRef = await addDoc(collection(db, 'contacts'), contactData)
       
-      console.log('Contacto guardado con ID: ', docRef.id)
+      console.log('✅ Contacto guardado con ID: ', docRef.id)
       setSuccess(true)
       return true
-    } catch (err) {
-      console.error('Error al guardar contacto: ', err)
-      setError('Error al enviar el mensaje. Por favor, inténtalo de nuevo.')
+    } catch (err: any) {
+      console.error('❌ Error al guardar contacto: ', err)
+      
+      // Mensajes de error más específicos
+      let errorMessage = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.'
+      
+      if (err.code === 'permission-denied') {
+        errorMessage = 'Error de permisos. Verifica la configuración de Firestore.'
+      } else if (err.code === 'unavailable') {
+        errorMessage = 'Servicio temporalmente no disponible. Inténtalo más tarde.'
+      } else if (err.message?.includes('Firebase')) {
+        errorMessage = 'Error de configuración de Firebase. Contacta al administrador.'
+      }
+      
+      setError(errorMessage)
       return false
     } finally {
       setIsLoading(false)
